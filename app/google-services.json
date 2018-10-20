@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "318916656898",
+    "firebase_url": "https://blickhack-a61c0.firebaseio.com",
+    "project_id": "blickhack-a61c0",
+    "storage_bucket": "blickhack-a61c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318916656898:android:80cd8f28501c5fd5",
+        "android_client_info": {
+          "package_name": "com.wdjpng.blickhack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318916656898-fqbmm8dviqckiicl08jj4p56mvqekisa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5lIzsxcL16GfiKnDPv3-xsdJqmiAjQec"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

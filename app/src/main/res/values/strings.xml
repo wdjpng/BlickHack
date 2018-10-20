@@ -2,5 +2,6 @@
     <string name="buttontext_take_with_camera">Take image with camera</string>
     <string name="buttontext_select_from_gallery">Pick Image From Gallery</string>
     <string name="selectImage">Select Image</string>
-    <string name="app_name">TextGoogler</string>
+    <string name="app_name">BlickHack</string>
+    <string name="error_no_text">Could not find text with the right patterns</string>
 </resources>

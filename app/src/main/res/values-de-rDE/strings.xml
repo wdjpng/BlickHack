@@ -3,5 +3,6 @@
     <string name="buttontext_take_with_camera">Nimm es Bild mit dinere Kamera uf</string>
     <string name="buttontext_select_from_gallery">Wähl es Bild us dinere Galerie us</string>
     <string name="selectImage">Wähl es Bild us</string>
-    <string name="app_name">TextGoogler</string>
+    <string name="app_name">BlickHack</string>
+    <string name="error_no_text">Mit dim Text stimmt irgendöppis nid</string>
 </resources>

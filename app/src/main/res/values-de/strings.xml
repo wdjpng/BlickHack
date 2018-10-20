@@ -3,5 +3,6 @@
     <string name="buttontext_take_with_camera">Nimm ein Bild mit deiner Kamera auf</string>
     <string name="buttontext_select_from_gallery">Wähle ein Bild aus der Galerie</string>
     <string name="selectImage">Wähle ein Bild aus</string>
-    <string name="app_name">TextGoogler</string>
+    <string name="app_name">BlickHack</string>
+    <string name="error_no_text">Es konnte kein Text mit dem richtigen Inhalt gefunden werden.</string>
 </resources>

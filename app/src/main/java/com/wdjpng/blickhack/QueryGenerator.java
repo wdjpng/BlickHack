@@ -5,12 +5,6 @@ import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import java.util.ArrayList;
 
 public class QueryGenerator {
-    private MainActivity mainActivity;
-
-    protected QueryGenerator(MainActivity mainActivity){
-        this.mainActivity = mainActivity;
-    }
-
 
     protected String generateQuery(FirebaseVisionText firebaseVisionText) throws IncorrectTextException {
         String text = firebaseVisionText.getText();

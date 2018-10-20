@@ -6,7 +6,6 @@ import android.provider.MediaStore;
 
 /**
  * This class just implements methods to start certain activities
- * TODO rename
  */
 public class Intents {
 

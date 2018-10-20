@@ -8,44 +8,53 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
 
-public class ClickListener {
+/**
+ * The use of this class is defining all needed listeners
+ */
+public class Listeners {
     private MainActivity mainActivity;
-    private Button selectImageButton;
-    private Button takeImageButton;
     private Intents intents;
     private QueryGenerator queryGenerator;
 
     protected OnSuccessListener<FirebaseVisionText> firebaseVisionTextOnSuccessListener;
     protected OnFailureListener firebaseVisionTextOnFailureListener;
 
-    protected ClickListener(MainActivity mainActivity){
+    /**
+     * This constructor defines the mainActivity variable and
+     * calls defineListeners() and defineVariables()
+     *
+     *TODO make sur supass is = weitergeben
+     * @param mainActivity is used by the app to be able to access different widgets and to surpass this it to the Intents
+     */
+    protected Listeners(MainActivity mainActivity){
         this.mainActivity = mainActivity;
 
-        defineWidgets();
         defineListeners();
         defineVariables();
     }
 
+    /**
+     * The defineVariables() method defines the variables queryGenerator and intents
+     * and TODO surpasses the mainActivity variable to the Intents constructor
+     */
     private void defineVariables(){
         intents = new  Intents(mainActivity);
-        queryGenerator = new QueryGenerator(mainActivity);
+        queryGenerator = new QueryGenerator();
 
     }
 
-    private void defineWidgets() {
-        selectImageButton = mainActivity.findViewById(R.id.selectImageButton);
-        takeImageButton = mainActivity.findViewById(R.id.takeImageButton);
-    }
-
+    /**
+     * The defineListeners() method currently defines all listeners in the hole app
+     */
     private void defineListeners() {
-        selectImageButton.setOnClickListener(new View.OnClickListener() {
+        mainActivity.getSelectImageButton().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intents.dispatchSelectPictureIntent();
             }
         });
 
-        takeImageButton.setOnClickListener(new View.OnClickListener() {
+        mainActivity.getTakeImageButton().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intents.dispatchTakePictureIntent();
@@ -62,7 +71,7 @@ public class ClickListener {
                 }
                 catch (IncorrectTextException incorrectTextException){
                     incorrectTextException.printStackTrace();
-                    //TODO shwo errror message to user
+                    //TODO show error message to user
 
                 }
 
@@ -78,10 +87,27 @@ public class ClickListener {
         };
     }
 
+
+    /**
+     * This method is used in the TextRecogniser class to define the
+     * firebaseVisionTextOnSuccessListener of the FirebaseVisionTextRecognizer
+     * the recogniseText() method in the TextRecogniser class
+     *
+     * @return The firebaseVisionTextOnSuccessListener
+     * @see TextRecogniser
+     */
     protected OnSuccessListener<FirebaseVisionText> getFirebaseVisionTextOnSuccessListener() {
         return firebaseVisionTextOnSuccessListener;
     }
 
+    /**
+     * This method is used in the TextRecogniser class to define the
+     * firebaseVisionTextOnFailureListener of the FirebaseVisionTextRecognizer
+     * the recogniseText() method in the TextRecogniser class
+     *
+     * @return The firebaseVisionTextOnFailureListener
+     * @see TextRecogniser
+     */
     protected OnFailureListener getFirebaseVisionTextOnFailureListener() {
         return firebaseVisionTextOnFailureListener;
     }

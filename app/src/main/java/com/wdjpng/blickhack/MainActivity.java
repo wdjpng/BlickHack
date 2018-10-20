@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
+
 import java.io.IOException;
 
 /**
@@ -24,8 +26,11 @@ public class MainActivity extends AppCompatActivity {
     static private final int REQUEST_IMAGE_CAPTURE = 1;
     static private final int REQUEST_IMAGE_PICK = 2;
 
-    private ClickListener clickListener;
+    private Listeners listeners;
     private TextRecogniser textRecogniser;
+
+    private Button selectImageButton;
+    private Button takeImageButton;
 
     /**
      * The onCreate function will be called when the app launches.
@@ -36,21 +41,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        defineWidgets();
         defineObjects();
     }
 
+    /**
+     *This method connects all widget variables in this class
+     *with all the important widgets in the layout activity_main
+     */
+    private void defineWidgets() {
+        selectImageButton = this.findViewById(R.id.selectImageButton);
+        takeImageButton = this.findViewById(R.id.takeImageButton);
+    }
 
     /**
-     * This method defines the clickListener and the textRecogniser
-     * TODO look if atsee is implemented write
-     * @see ClickListener
+     * This method defines the listeners and the textRecogniser
+     * @see Listeners
      * @see TextRecogniser
      */
     private void defineObjects() {
-        clickListener = new ClickListener(this);
+        listeners = new Listeners(this);
         textRecogniser = new TextRecogniser(this);
     }
+
+
 
 
     /**
@@ -86,10 +100,26 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This is the getter for the OnCLickListener onClickListener
-     * @return OnCLickListener onClickListener
+     * @return The OnCLickListener onClickListener
      */
-    protected ClickListener getClickListener() {
-        return clickListener;
+    protected Listeners getListeners() {
+        return listeners;
+    }
+
+    /**
+     * This is the getter for the selectImageButton
+     * @return The button selectImageButton
+     */
+    protected Button getSelectImageButton() {
+        return selectImageButton;
+    }
+
+    /**
+     * This is the getter for the takeImageButton
+     * @return The button takeImageButton
+     */
+    protected Button getTakeImageButton() {
+        return takeImageButton;
     }
 }
 

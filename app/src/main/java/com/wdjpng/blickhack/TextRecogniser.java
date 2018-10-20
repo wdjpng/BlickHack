@@ -1,22 +1,18 @@
 package com.wdjpng.blickhack;
 
 import android.graphics.Bitmap;
-import android.support.annotation.NonNull;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
-import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
 
 public class TextRecogniser {
     private MainActivity mainActivity;
-    private  ClickListener clickListener;
+    private Listeners listeners;
 
     protected TextRecogniser(MainActivity mainActivity){
         this.mainActivity = mainActivity;
-        this.clickListener = mainActivity.getClickListener();
+        this.listeners = mainActivity.getListeners();
     }
 
     protected void recogniseText(final Bitmap imageBitmap) {
@@ -29,7 +25,7 @@ public class TextRecogniser {
 
 
         textRecognizer.processImage(image)
-                .addOnSuccessListener(clickListener.getFirebaseVisionTextOnSuccessListener())
-                .addOnFailureListener(clickListener.getFirebaseVisionTextOnFailureListener());
+                .addOnSuccessListener(listeners.getFirebaseVisionTextOnSuccessListener())
+                .addOnFailureListener(listeners.getFirebaseVisionTextOnFailureListener());
     }
 }

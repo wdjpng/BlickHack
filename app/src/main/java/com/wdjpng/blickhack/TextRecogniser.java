@@ -19,7 +19,7 @@ public class TextRecogniser {
         this.clickListener = mainActivity.getClickListener();
     }
 
-    public void recogniseAndGoogleText(final Bitmap imageBitmap) {
+    public void recogniseText(final Bitmap imageBitmap) {
 
         FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(imageBitmap);
 

@@ -4,12 +4,13 @@ import android.app.SearchManager;
 import android.content.Intent;
 import android.provider.MediaStore;
 
-//TODO rename
 public class Intents {
+
     private MainActivity mainActivity;
 
     static private final int REQUEST_IMAGE_CAPTURE = 1;
     static private final int REQUEST_IMAGE_PICK = 2;
+
 
     public Intents(MainActivity mainActivity){
         this.mainActivity = mainActivity;

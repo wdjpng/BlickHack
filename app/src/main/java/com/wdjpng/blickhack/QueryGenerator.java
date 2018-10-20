@@ -7,12 +7,12 @@ import java.util.ArrayList;
 public class QueryGenerator {
     private MainActivity mainActivity;
 
-    public QueryGenerator(MainActivity mainActivity){
+    protected QueryGenerator(MainActivity mainActivity){
         this.mainActivity = mainActivity;
     }
 
 
-    public String generateQuery(FirebaseVisionText firebaseVisionText) throws IncorrectTextException {
+    protected String generateQuery(FirebaseVisionText firebaseVisionText) throws IncorrectTextException {
         String text = firebaseVisionText.getText();
 
         if(!(text.contains("?") && text.contains("\n"))){

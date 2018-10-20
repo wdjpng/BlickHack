@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
      * This is the getter for the OnCLickListener onClickListener
      * @return OnCLickListener onClickListener
      */
-    public ClickListener getClickListener() {
+    protected ClickListener getClickListener() {
         return clickListener;
     }
 }

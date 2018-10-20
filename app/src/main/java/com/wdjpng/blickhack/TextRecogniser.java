@@ -14,12 +14,12 @@ public class TextRecogniser {
     private MainActivity mainActivity;
     private  ClickListener clickListener;
 
-    public TextRecogniser(MainActivity mainActivity){
+    protected TextRecogniser(MainActivity mainActivity){
         this.mainActivity = mainActivity;
         this.clickListener = mainActivity.getClickListener();
     }
 
-    public void recogniseText(final Bitmap imageBitmap) {
+    protected void recogniseText(final Bitmap imageBitmap) {
 
         FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(imageBitmap);
 

@@ -18,7 +18,7 @@ public class ClickListener {
     protected OnSuccessListener<FirebaseVisionText> firebaseVisionTextOnSuccessListener;
     protected OnFailureListener firebaseVisionTextOnFailureListener;
 
-    public ClickListener(MainActivity mainActivity){
+    protected ClickListener(MainActivity mainActivity){
         this.mainActivity = mainActivity;
 
         defineWidgets();
@@ -78,11 +78,11 @@ public class ClickListener {
         };
     }
 
-    public OnSuccessListener<FirebaseVisionText> getFirebaseVisionTextOnSuccessListener() {
+    protected OnSuccessListener<FirebaseVisionText> getFirebaseVisionTextOnSuccessListener() {
         return firebaseVisionTextOnSuccessListener;
     }
 
-    public OnFailureListener getFirebaseVisionTextOnFailureListener() {
+    protected OnFailureListener getFirebaseVisionTextOnFailureListener() {
         return firebaseVisionTextOnFailureListener;
     }
 }
